@@ -56,9 +56,13 @@ name: "Copilot Setup Steps"
 on:
   workflow_dispatch:
   push:
+    branches-ignore:
+      - 'gh-readonly-queue/**'
     paths:
       - .github/workflows/copilot-setup-steps.yml
   pull_request:
+    branches:
+      - main
     paths:
       - .github/workflows/copilot-setup-steps.yml
 
